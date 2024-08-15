@@ -25,7 +25,7 @@
 <!-- configurar perfil  -->
 
 <!-- enlaces para ver los datos  -->
-      <a href="index.html"><i class = "bx"><span class="material-symbols-outlined">
+      <a href="interfaz.html"><i class = "bx"><span class="material-symbols-outlined">
         home
         </span></i>inicio</a>
 
@@ -100,6 +100,15 @@
    
 
     <script>
+
+fetch('http://localhost:3000/destacados'
+          , {
+            headers: {
+                          'Content-Type': 'application/json',
+                          Accept: 'application/json',
+                          Authorization: `Bearer ${localStorage.getItem('token')}`
+                      }
+          })
 
     </script>
 

@@ -9,14 +9,7 @@
   <body>
 
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
-
+ 
     <nav class="sidebar__nav">
     
         <a href="#"><i class = "bx"></i></a>
@@ -32,7 +25,7 @@
 
 <!-- configurar perfil  -->
            <!-- titulos de la barra lateral -->
-           <a href="index.html"><i class = "bx"><span class="material-symbols-outlined">
+           <a href="interfaz.html"><i class = "bx"><span class="material-symbols-outlined">
             home
             </span></i>inicio</a>
     
@@ -112,7 +105,14 @@
     </div>
   
       <script>
-          fetch('http://localhost:3000/autores')
+          fetch('http://localhost:3000/autores', {
+            headers: {
+                          
+                          'Content-Type': 'application/json',
+                          Accept: 'application/json',
+                          Authorization: `Bearer ${localStorage.getItem('token')}`
+                      }
+          })
       .then(response => response.json())
       .then(proyectos => {
           // Obtener el UL de proyectos

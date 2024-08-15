@@ -32,7 +32,7 @@
 
 <!-- configurar perfil  -->
            
-<a href="index.html"><i class = "bx"><span class="material-symbols-outlined">
+<a href="interfaz.html"><i class = "bx"><span class="material-symbols-outlined">
   home
   </span></i>inicio</a>
 
@@ -119,9 +119,19 @@
       </div>
   
       <script>
-          fetch('http://localhost:3000/usuarios')
+          fetch('http://localhost:3000/usuario'
+          , {
+            headers: {
+                          'Content-Type': 'application/json',
+                          Accept: 'application/json',
+                          Authorization: `Bearer ${localStorage.getItem('token')}`
+                      }
+          })
       .then(response => response.json())
       .then(proyectos => {
+
+        console.log(proyectos)
+        
           // Obtener el UL de proyectos
           const filas = document.getElementById('filas');
           // Recorrer

@@ -25,7 +25,7 @@
 
 <!-- configurar perfil  -->
            
-<a href="index.html"><i class = "bx"><span class="material-symbols-outlined">
+<a href="interfaz.html"><i class = "bx"><span class="material-symbols-outlined">
   home
   </span></i>inicio</a>
 
@@ -73,13 +73,10 @@
         <table>
           <tr>
               <th>
-                id_libro_cantidad
+                id guardados
               </th>
               <th>
-                id_libro
-              </th>
-              <th>
-                cantidad
+                id libros guardados
               </th>
             </th>
              
@@ -102,9 +99,21 @@
       </div>
   
       <script>
-          fetch('http://localhost:3000/cantidad')
-      .then(response => response.json())
-      .then(proyectos => {
+
+        fetch('http://localhost:3000/guardado'
+        , {
+          headers: {
+                        'Content-Type': 'application/json',
+                        Accept: 'application/json',
+                        Authorization: `Bearer ${localStorage.getItem('token')}`
+                    }
+        })
+
+    .then(response => response.json())
+    .then(proyectos => {
+      
+      console.log(proyectos)
+
           // Obtener el UL de proyectos
           const filas = document.getElementById('filas');
           // Recorrer
@@ -112,11 +121,9 @@
               // Crear un LI
               const td = document.createElement('tr');
               // Agregar enlace para el proyecto
-              td.innerHTML = `<td>${proyecto.id_libro_cantidad}</td>`;
-  
-              td.innerHTML += `<td>${proyecto.id_libro}</td>`;
+              td.innerHTML = `<td>${proyecto.id_guardados}</td>`;
 
-              td.innerHTML += `<td>${proyecto.cantidad}</td>`;
+              td.innerHTML += `<td>${proyecto.id_libros_guardados}</td>`;
 
               // Agregar el LI al UL
               filas.appendChild(td);

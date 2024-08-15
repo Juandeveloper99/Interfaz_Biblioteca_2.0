@@ -9,13 +9,6 @@
   <body>
 
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
 
     <nav class="sidebar__nav">
     
@@ -30,7 +23,7 @@
           </span></i>Perfil</a>
 
 <!-- configurar perfil  -->
-<a href="index.html"><i class = "bx"><span class="material-symbols-outlined">
+<a href="interfaz.html"><i class = "bx"><span class="material-symbols-outlined">
   home
   </span></i>inicio</a>
 
@@ -80,27 +73,33 @@
       </style>
   </head>
   <body>
+
+    <!-- antiguo diseño sin botones -->
       <table>
+        <thead>
         <tr>
-            <th>
-                id
-            </th>
-            <th>
-                nombre
-            </th>
-            <th>
-                fecha_de_publicacion
-            </th>
-             <th>
-                libro_genero
-            </th> 
-            <th>
-                id_libro_autor"
-            </th>
+            <th>id</th>
+            <th>Nombre</th>
+            <th>Fecha de Publicacion</th>
+            <th>libro genero </th>
+            <th>id libro autor</th>
+            <th>botones </th>
         </tr>
-        <tbody id = "filas">
-        </tbody>
+      </thead>
+
+      
+        <td neme : editar  > <button onclick="alert('Editando')">Editar</button></td>
+        <td><button onclick="alert('Editando')">Eliminar</button></td>
+    
+     
+        <!-- botones para cada fila -->
+        <tbody id = "filas"> </tbody>
+      <tbody botones>  </tbody>
+
       </table>
+
+
+
 
 
     <div class="search-container">
@@ -109,17 +108,15 @@
       <button onclick="search()">Buscar</button>
     </div>
 
-    <div class = 'funiones'>
-      <div>
-        <button class = 'agregar' onclick="search()">Agregar</button>
-      </div>
-      <div>
-        <button class = 'eliminar' onclick="search()">Eliminar</button>
-      </div>
-    </div>
-
     <script>
-        fetch('http://localhost:3000/libros')
+        fetch('http://localhost:3000/libros'
+       , {
+            headers: {
+                          'Content-Type': 'application/json',
+                          Accept: 'application/json',
+                          Authorization: `Bearer ${localStorage.getItem('token')}`
+                      }
+          })
     .then(response => response.json())
     .then(proyectos => {
         // Obtener el UL de proyectos
@@ -138,6 +135,8 @@
             td.innerHTML += `<td>${proyecto.libro_genero}</td>`;
 
             td.innerHTML += `<td>${proyecto.id_libro_autor}</td>`;
+
+            
             // Agregar el LI al UL
             filas.appendChild(td);
         });
