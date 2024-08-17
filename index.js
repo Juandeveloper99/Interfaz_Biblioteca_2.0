@@ -81,7 +81,7 @@ document.addEventListener('DOMContentLoaded', () => {
                               <th>nombre</th>
                               <th>fecha_de_publicacion</th>
                               <th>libro_genero</th>
-                              <th>  id_libro_autor </th>         
+                              <th>id_libro_autor </th>         
                           </tr>
                       </thead>
                       <tbody>`;

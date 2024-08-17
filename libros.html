@@ -61,6 +61,8 @@
             <th>Género</th>
             <th>Autor</th>
             <th>Tareas</th>
+           
+
           </tr>
         </thead>
         <!-- botones para cada fila -->
@@ -98,16 +100,24 @@
         
         <td>${proyecto.id_libro_autor}</td>`;
             td.innerHTML += `
+
+            
         
         <td>
+          
           <button onclick="alert('Editando')">Editar</button>
           <button onclick="alert('Editando')">Eliminar</button>
         </td>`;
+
+        
             // Agregar el LI al UL
             filas.appendChild(td);
           });
         });
       </script>
+
+      
+      <div><button onclick="alert('Editando')">Crear Nuevo</button></div>
       </div>
   </body>
 </html>

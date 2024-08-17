@@ -1,161 +1,119 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="es">
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite + React + TS</title>
+    <title>Usuarios</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
   </head>
   <body>
-
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
-
     <nav class="sidebar__nav">
-    
-        <a href="#"><i class = "bx"></i></a>
-        <a href="#"><i class = "bx"></i></a>
-        
-        
-<!-- configurar perfil  -->
-      
-      <a href="perfil.html"><i class = "bx">
-        <span class="material-symbols-outlined">
-          account_circle
-          </span></i>Perfil</a>
-
-<!-- configurar perfil  -->
-           
-<a href="interfaz.html"><i class = "bx"><span class="material-symbols-outlined">
-  home
-  </span></i>inicio</a>
-
-<a href="autores.html"><i class = "bx"><span class="material-symbols-outlined">
-  account_box
-  </span></i>Autores</a>
-
-  <a href="genero.html"><i class = "bx"><span class="material-symbols-outlined">
-    lasso_select
-    </span></i>Genero</a>
-    
-<a href="libros.html"><i class = "bx"><span class="material-symbols-outlined">
-  library_books
-  </span></i>Libros</a>
-
-  <a href="guardados.html"><i class = "bx"><span class="material-symbols-outlined">
-    bookmark
-    </span></i>Guardados</a>
-
-  <a href="favoritos.html"><i class = "bx"><span class="material-symbols-outlined">
-    favorite
-    </i>Favoritos</a>
-
-  <a href="usuarios.html"><i class = "bx"><span class="material-symbols-outlined">
-    group_add
-    </span></i>Usuarios</a>
-          </nav>
-
-          <title>Tabla de Base de Datos</title>
-      <style>
-          table {
-              width: 60%;
-              border-collapse: collapse;
-          }
-          th, td {
-              border: 1px solid black;
-              padding: 8px;
-              text-align: left;
-          }
-          th {
-              background-color: #f2f2f2;
-          }
-      </style>
-  
-        <table>
-          <tr>
-              <th>
-                id_usuario
-              </th>
-              <th>
-                nombre
-              </th>
-              <th>
-                apellido
-              </th>
-              <th>
-                correo_electronico
-              </th>
-              <th>
-                telefono
-              </th>
-            </th>
-             
-          <tbody id = "filas">
-
-          </tbody>
-        </table>
-  
-  
+      <a href="perfil.html">
+        <i class="bx">
+          <span class="material-symbols-outlined"> account_circle </span>
+        </i>Perfil </a>
+      <a href="interfaz.html">
+        <i class="bx">
+          <span class="material-symbols-outlined"> home </span>
+        </i>inicio </a>
+      <a href="autores.html">
+        <i class="bx">
+          <span class="material-symbols-outlined"> account_box </span>
+        </i>Autores </a>
+      <a href="genero.html">
+        <i class="bx">
+          <span class="material-symbols-outlined"> lasso_select </span>
+        </i>Genero </a>
+      <a href="libros.html">
+        <i class="bx">
+          <span class="material-symbols-outlined"> library_books </span>
+        </i>Libros </a>
+      <a href="guardados.html">
+        <i class="bx">
+          <span class="material-symbols-outlined"> bookmark </span>
+        </i>Guardados </a>
+      <a href="favoritos.html">
+        <i class="bx">
+          <span class="material-symbols-outlined"> favorite </span>
+        </i>Favoritos </a>
+      <a href="usuarios.html">
+        <i class="bx">
+          <span class="material-symbols-outlined"> group_add </span>
+        </i>Usuarios </a>
+    </nav>
+    <!-- antiguo diseño sin botones -->
+    <div class="content__main">
       <div class="search-container">
-        <h1> Biblionline
-        <input type="text" id="searchInput" placeholder="Buscar...">
-        <button onclick="search()">Buscar</button>
+        <h1 style="flex-grow: 1;"> Biblionline</h1>
+          <input type="text" id="searchInput" placeholder="Ingrese un valor..." />
+          <button onclick="search()">Buscar</button>
+        </h1>
       </div>
-
-
-      <div class = 'usuarios.funiones'>
-        <div>
-          <button class = 'agregar.usuario' onclick="search()">Agregar Usuario</button>
-        </div>
-        <div>
-          <button class = 'eliminar.usuario' onclick="search()">Eliminar Usuario</button>
-        </div>
-      </div>
-  
+      
+      <table>
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Nombre</th>
+            <th>Apellido</th>
+            <th>correo_electronico</th>
+            <th>telefono</th>
+            <th>password</th>
+            <th>Tareas</th>
+          </tr>
+        </thead>
+        <!-- botones para cada fila -->
+        <tbody id="filas"></tbody>
+      </table>
+      
       <script>
-          fetch('http://localhost:3000/usuario'
-          , {
-            headers: {
-                          'Content-Type': 'application/json',
-                          Accept: 'application/json',
-                          Authorization: `Bearer ${localStorage.getItem('token')}`
-                      }
-          })
-      .then(response => response.json())
-      .then(proyectos => {
-
-        console.log(proyectos)
-        
+        fetch('http://localhost:3000/usuario', {
+          headers: {
+            'Content-Type': 'application/json',
+            Accept: 'application/json',
+            Authorization: `Bearer ${localStorage.getItem('token')}`,
+          },
+        }).then((response) => response.json()).then((proyectos) => {
           // Obtener el UL de proyectos
           const filas = document.getElementById('filas');
           // Recorrer
-          proyectos.forEach(proyecto => {
-              // Crear un LI
-              const td = document.createElement('tr');
-              // Agregar enlace para el proyecto
-              td.innerHTML = `<td>${proyecto.id_usuario}</td>`;
-  
-              td.innerHTML += `<td>${proyecto.nombre}</td>`;
+          proyectos.forEach((proyecto) => {
+            // Crear un LI
+            const td = document.createElement('tr');
+            // Agregar enlace para el proyecto
+            td.innerHTML = `
+        
+        <td>${proyecto.id_usuario}</td>`;
+            td.innerHTML += `
+        
+        <td>${proyecto.nombre}</td>`;
+            td.innerHTML += `
+        
+        <td>${proyecto.apellido}</td>`;
+            td.innerHTML += `
+        
+        <td>${proyecto.correo_electronico}</td>`;
+            td.innerHTML += `
+        
+        <td>${proyecto.telefono}</td>`;
+            td.innerHTML += `
 
-              td.innerHTML += `<td>${proyecto.apellido}</td>`;
-
-              td.innerHTML += `<td>${proyecto.correo_electronico}</td>`;
-
-              td.innerHTML += `<td>${proyecto.telefono}</td>`;
-
-              // Agregar el LI al UL
-              filas.appendChild(td);
+        <td>${proyecto.password}</td>`;
+            td.innerHTML += `
+        
+        <td>
+          <button onclick="alert('Editando')">Editar</button>
+          <button onclick="alert('Editando')">Eliminar</button>
+        </td>`;
+            // Agregar el LI al UL
+            filas.appendChild(td);
           });
-      });
+        });
       </script>
-        </body>
-
-
-        <link rel="stylesheet" href="style.css">
-        </html>
+      <div><button onclick="alert('Editando')">Crear Nuevo Usuario</button></div>
+     
+      </div>
+  </body>
+</html>
